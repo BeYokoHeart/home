@@ -1,0 +1,413 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 40vw;
+  height: 40vh;
+
+  background: #f3e2c7;
+  border: 8px solid #5d4122;
+
+  box-shadow:
+      0 0 0 2px #a9844c,
+      0 0 0 4px #3b2813,
+      0 15px 40px rgba(0,0,0,0.7);
+
+  border-radius: 10px;
+  z-index: 999;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  position: fixed;
+}
+
+.modal_content {
+  height: 100%;
+  overflow-y: auto;
+
+  background: #d8b48a;
+
+  box-sizing: border-box;
+
+  /* 🔥 ZAMIANA: więcej miejsca na X */
+  padding: 55px 12px 35px 12px;
+
+  position: relative;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  background: #3b2813;
+  color: #d8b48a;
+
+  border: 2px solid #5d4122;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  line-height: 1;
+
+  z-index: 9999; 
+}
+
+#closeModal:hover {
+  background: #5d4122;
+}
+
+
+/*
+#modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 40vw;
+  height: 40vh;
+
+  background: #f3e2c7;
+  border: 8px solid #5d4122;
+
+  box-shadow:
+      0 0 0 2px #a9844c,
+      0 0 0 4px #3b2813,
+      0 15px 40px rgba(0,0,0,0.7);
+
+  border-radius: 10px;
+  z-index: 999;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+}
+
+.modal_content {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+
+  background: #d8b48a;
+
+  box-sizing: border-box;
+
+  padding: 12px;
+  padding-bottom: 35px; 
+  scroll-padding-bottom: 20px;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  background: #3b2813; 
+  color: #d8b48a;      
+
+  border: 2px solid #5d4122;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  line-height: 1;
+
+  z-index: 1000;
+}
+
+#closeModal:hover {
+  background: #5d4122;
+}
+*/
+#mTitle {
+  margin: 0 0 8px 0;
+  padding: 8px;
+
+  border: 2px solid #5d4122;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+
+  color: #2d1b0e;
+}
+
+#mDesc {
+  margin: 0 0 10px 0;
+  padding: 10px;
+
+  border: 2px solid #5d4122;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+
+  overflow-wrap: break-word;
+}
+
+#mLink {
+  margin: 0 0 8px 0; 
+  text-decoration: none;
+  display: block;
+
+  border: 2px solid #5d4122;
+  background: rgba(255,255,255,0.2);
+
+  padding: 10px;
+  border-radius: 6px;
+
+  color: #2d1b0e;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+
+.modal_content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal_content::-webkit-scrollbar-track {
+  background: #d8b48a;
+}
+
+.modal_content::-webkit-scrollbar-thumb {
+  background: #5d4122;
+  border-radius: 6px;
+}
+
+.modal_content::-webkit-scrollbar-thumb:hover {
+  background: #3b2813;
+}
+
+
+
+
+/*search*/
+
+#ui {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+#searchInput {
+  padding: 8px 10px;
+
+  background: #3a3a3a; /* grafit */
+  border: 1px solid #5a5a5a;
+
+  color: #f0f0f0;
+
+  outline: none;
+
+  border-radius: 4px;
+
+  font-family: 'Lato', sans-serif;
+}
+
+#searchInput::placeholder {
+  color: #b5b5b5;
+}
+
+#searchBtn,
+#nextBtn {
+  padding: 8px 12px;
+
+  background: linear-gradient(to bottom, #b08a5a, #7a5632);
+
+  border: 1px solid #c9a55f;
+
+  color: white;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+
+#searchBtn:hover,
+#nextBtn:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 0 10px rgba(255, 220, 140, 0.4);
+}
+
+
+/*modal view*/
+.window {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #2d1b0e; /* ciemne brązowe tło */
+
+    border: 8px solid #5d4122;
+
+    box-shadow:
+        0 0 0 2px #a9844c,
+        0 0 0 4px #3b2813,
+        0 15px 40px rgba(0, 0, 0, 0.7);
+
+    overflow: hidden;
+}
+
+.window::before {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(212, 180, 105, 0.7);
+
+    pointer-events: none;
+}
+
+
+.window_header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    background: linear-gradient(to bottom, #5d4122, #3b2813);
+
+    border-bottom: 2px solid #a9844c;
+
+    z-index: 1000;
+}
+
+.window_title {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #d4b469;
+
+    letter-spacing: 0.5px;
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#windowClose {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+    border: 1px solid #c9a55f;
+
+    background: linear-gradient(to bottom, #72512a, #4b3318);
+
+    color: #f0dfb3;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#windowClose:hover {
+    transform: scale(1.1);
+
+    box-shadow: 0 0 12px rgba(255, 220, 140, 0.6);
+}
+
+#game {
+    position: absolute;
+
+    top: 64px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100% - 64px);
+
+    display: block;
+}
+
+#fullscreenBtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 150px;
+    height: 34px;
+
+    border-radius: 6px; /* 🔥 zamiast 50% */
+
+    border: 1px solid #c9a55f;
+
+    background: linear-gradient(to bottom, #72512a, #4b3318);
+    color: #f0dfb3;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    z-index: 1100;
+}
+
+#fullscreenBtn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 12px rgba(255,220,140,0.6);
+}

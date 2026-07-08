@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World</title>
+
+    <link rel="stylesheet" href="world.css">
+</head>
+<body>
+
+    <div class="window">
+
+        <!-- Górny pasek -->
+        <div class="window_header">
+            <div class="window_title">
+                World
+            </div>
+
+             <button id="fullscreenBtn" type="button">
+                  ⛶ Full screen
+              </button>
+
+            <!--<button id="windowClose" type="button">
+                ✕
+            </button>-->
+        </div>
+
+        <!-- Główna plansza -->
+        <canvas id="game"></canvas>
+
+        <div id="modal" style="display:none;">
+
+            <button id="closeModal" type="button">✕</button>
+
+            <div class="modal_content">
+                <h3 id="mTitle"></h3>
+                <p id="mDesc"></p>
+                <a id="mLink" target="_blank"></a>
+            </div>
+
+        </div>
+
+
+        <!-- Panel wyszukiwania -->
+        <div id="ui">
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="nickname..."
+            >
+
+            <button id="searchBtn" type="button">
+                Search
+            </button>
+
+            <button
+                id="nextBtn"
+                type="button"
+                style="display:none;"
+            >
+                NEXT
+            </button>
+        </div>
+
+    </div>
+
+    <script src="world.js"></script>
+
+    <script>
+        document.getElementById("windowClose").addEventListener("click", () => {
+            window.close();
+        });
+    </script>
+
+</body>
+</html>

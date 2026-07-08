@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home City</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <section class="section section_homecity active">
+            
+            <div class="map_container">
+
+                <div class="map_stage" id="mapStage">
+                    
+                    <img
+                        src="images/homecity.png"
+                        alt="Home City"
+                        class="homecity_image"
+                    >
+
+                    <!-- FLAGA 1 -->
+                    <div class="flag flag_1" data-target="apps" data-title="Chinese Astrology and Metaphysics">
+                        <div class="flag_label">Chinese Astrology</div>
+                    </div>
+
+                    <!-- FLAGA 2 
+                    <div class="flag flag_2" data-target="about"
+                    data-url="https://sites.google.com/view/beyokoheart">
+                        <div class="flag_label">About us</div>
+                    </div>-->
+
+
+                    <!-- FLAGA 3 -->
+                    <div class="flag flag_3" data-target="oracle" data-title="Cards">
+                        <div class="flag_label">Oracle cards</div>
+                    </div>
+
+                    <!-- FLAGA 4 -->
+                    <div class="flag flag_4" data-target="guild" data-title="BeYokoHeart Guild">
+                        <div class="flag_label">About us</div>
+                    </div>
+
+                    <!-- FLAGA 5 
+                    <div class="flag flag_5" data-target="contact" data-title="Contact">
+                        <img src="images/contact.png" class="flag_image">
+                    </div>-->
+
+
+                    <!-- FLAGA 5_1 -->
+                    <div class="flag flag_5_1" data-target="contact" data-title="Contact">
+                        <div class="flag_label">Contact</div>
+                    </div>
+
+                    <!-- FLAGA 6 
+
+                    <div class="flag flag_6" data-target="fullscreen" data-title="Fullscreen">
+                        <img src="images/fullscreen.png" class="flag_image_function">
+                    </div> -->
+
+                    <!-- FLAGA 7 -->
+                    <div class="flag flag_7" data-target="legal" data-title="Conditions">
+                        <div class="flag_label">Conditions</div>
+                    </div>
+
+                    <!-- FLAGA 8 
+
+                    <div class="flag flag_8" data-target="quest" data-title="Daily quest">
+                        <img src="images/dailyquest.png" class="flag_image">
+                    </div> -->
+
+                    <!-- FLAGA 8_1 -->
+                    <div class="flag flag_8_1" data-target="quest" data-title="Daily quest">
+                        <div class="flag_label">Daily quest</div>
+                    </div>
+
+                    <!-- FLAGA 9 
+
+                    <div class="flag flag_9" data-target="patron" data-title="Portal">
+                        <img src="images/portal.png" class="flag_image_portal">
+                    </div>-->
+
+                    <!-- FLAGA 9_1 -->
+                    <div class="flag flag_9_1" data-target="patron" data-title="Portal">
+                        <div class="flag_label">World of Dreamers</div>
+                    </div>
+
+                    <!-- FLAGA 10 -->
+                    <div class="flag flag_10" data-target="mission" data-title="OurMission">
+                        <div class="flag_label">Our mission</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="modal" id="modal">
+
+            <div class="modal_content">
+
+                <div class="modal_header">
+
+                    <div class="modal_title" id="modalTitle">
+                    </div>
+
+                    <button class="modal_close" id="modalClose">✕</button>
+
+                </div>
+
+                <div class="modal_tabs" id="modalTabs">
+                </div>
+
+                <div class="modal_body">
+
+                    <iframe id="modalFrame"></iframe>
+
+                    <div class="modal_fallback" id="modalFallback">
+                        Application under construction - to speed up the work on building this website, we invite you to support the project :)
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <div id="rotate-overlay">
+        <div class="rotate-box">
+            <h2>📱 Zalecana orientacja pozioma</h2>
+
+            <p>
+                Ta aplikacja działa najlepiej w trybie poziomym.<br>
+                Możesz obrócić urządzenie lub kontynuować.
+            </p>
+
+            <div class="rotate-actions">
+                <button id="rotate-continue">Kontynuuj</button>
+                <button id="rotate-reset">Nie pokazuj ponownie</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="rotate.js"></script>
+        <script src="script.js"></script>
+        
+
+    </body>
+</html>

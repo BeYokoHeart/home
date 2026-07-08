@@ -1,0 +1,1396 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+body {
+    background: #1a1a1a;
+}
+
+#rotate-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    color: #fff;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#rotate-overlay.show {
+    display: flex;
+}
+
+.rotate-box {
+    max-width: 520px;
+    background: rgba(255,255,255,0.05);
+    padding: 24px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+}
+
+.rotate-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rotate-actions button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#rotate-continue {
+    background: #4caf50;
+    color: white;
+}
+
+#rotate-reset {
+    background: #444;
+    color: white;
+}
+
+
+/* MAIN SECTION */
+
+.section_homecity {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+
+/* OBRAZ */
+.homecity_image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+    z-index: 1;
+
+}
+
+
+/* FLAGA */
+.flag {
+    position: absolute;
+    z-index: 10;
+    pointer-events: auto;
+    transform: translate(-50%, -100%);
+    /*cursor: pointer;*/
+    --beam-length: 70px;
+    cursor: grab;
+}
+
+
+
+
+/* WYGLĄD FLAGI */
+.flag_label {
+    padding: 8px 16px;
+
+    color: #e8d9a8;
+    background: rgba(10, 20, 15, 0.85);
+
+    border: 1px solid rgba(184,167,106,0.8);
+
+    border-radius: 10px;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 0 8px rgba(184,167,106,0.4);
+
+    white-space: nowrap;
+
+    position: relative;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flag:hover .flag_label {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 15px rgba(184,167,106,0.8),
+        0 0 30px rgba(184,167,106,0.3);
+}
+
+.flag_label::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+
+    width: 2px;
+    height: var(--beam-length);
+
+    background: linear-gradient(
+        to bottom,
+        rgba(184,167,106,0.9),
+        rgba(184,167,106,0.4),
+        rgba(184,167,106,0.0)
+    );
+
+    opacity: 0.9;
+
+    box-shadow: 0 0 10px rgba(184,167,106,0.4);
+
+    pointer-events: none;
+}
+
+@keyframes beamPulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.flag:active {
+    cursor: grabbing;
+}
+
+.flag_label a {
+    color: inherit;           /* bierze kolor z .flag_label */
+    text-decoration: none;    /* usuwa podkreślenie */
+
+    font-family: inherit;
+    font-size: inherit;
+
+    display: inline-block;    /* lepsze zachowanie hover */
+}
+
+
+
+/* Chińska astrologia */
+.flag_1 {
+    left: 598px;
+    top: 276px;
+    --beam-length: 40px;
+}
+
+/* About */
+
+.flag_2 {
+    left: 1253px;
+    top: 111px;
+    --beam-length: 80px;
+}
+
+/* Oracle */
+
+.flag_3 {
+    left: 1211px;
+    top: 498px;
+    --beam-length: 80px;
+}
+
+/* Tarot */
+
+.flag_4 {
+    left: 900px;
+    top: 303px;
+    --beam-length: 80px;
+}
+
+/* Contact */
+
+.flag_5 {
+    position: absolute;
+    left: 1484px;
+    top: 892px;
+    z-index: 10;
+}
+
+.flag_5_1 {
+    left: 1361px;
+    top: 187px;
+    --beam-length: 80px;
+}
+
+
+
+/* HALO POD IKONĄ */
+.flag_5::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 110%;
+    height: 110%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(circle,
+        rgba(169,132,76,0.35) 0%,
+        rgba(169,132,76,0.15) 40%,
+        rgba(169,132,76,0) 70%
+    );
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* TOOLTIP */
+.flag_5::after {
+    content: attr(data-title);
+
+    position: absolute;
+    left: 50%;
+    bottom: 100%; /* NAD elementem */
+    transform: translate(-50%, -8px);
+
+    padding: 6px 10px;
+
+    background: rgba(10, 20, 15, 0.9);
+    border: 1px solid #a9844c;
+    border-radius: 8px;
+
+    color: #e8d9a8;
+    font-size: 12px;
+    font-family: Georgia, serif;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* pokazanie tooltipa */
+.flag_5:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -14px);
+}
+
+
+/* Fullscreen */
+
+.flag_6 {
+    position: absolute;
+    left: 377px;
+    top: 894px;
+    z-index: 10;
+}
+
+.flag_6:hover .flag_image_function {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgba(212,180,105,0.6));
+}
+
+
+/* Tarot */
+
+.flag_7 {
+    left: 558px;
+    top: 554px;
+    --beam-length: 80px;
+}
+
+/* Daily quest*/
+
+.flag_8 {
+    position: absolute;
+    left: 233px;
+    top: 340px;
+    z-index: 10;
+}
+
+.flag_8_1 {
+    left: 828px;
+    top: 501px;
+    --beam-length: 40px;
+}
+
+
+/* HALO POD IKONĄ */
+.flag_8::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 110%;
+    height: 110%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(circle,
+        rgba(169,132,76,0.35) 0%,
+        rgba(169,132,76,0.15) 40%,
+        rgba(169,132,76,0) 70%
+    );
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* TOOLTIP */
+.flag_8::after {
+    content: attr(data-title);
+
+    position: absolute;
+    left: 50%;
+    bottom: 100%; /* NAD elementem */
+    transform: translate(-50%, -8px);
+
+    padding: 6px 10px;
+
+    background: rgba(10, 20, 15, 0.9);
+    border: 1px solid #a9844c;
+    border-radius: 8px;
+
+    color: #e8d9a8;
+    font-size: 12px;
+    font-family: Georgia, serif;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* pokazanie tooltipa */
+.flag_8:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -14px);
+}
+
+/* portal*/
+
+.flag_9 {
+    position: absolute;
+    left: 140px;
+    top: 880px;
+    z-index: 10;
+}
+
+.flag_9_1 {
+    left: 286px;
+    top: 278px;
+    --beam-length: 80px;
+}
+
+.flag_10 {
+    left: 1529px;
+    top: 309px;
+    --beam-length: 40px;
+}
+
+
+/* HALO POD IKONĄ */
+.flag_9::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 110%;
+    height: 110%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(circle,
+        rgba(169,132,76,0.35) 0%,
+        rgba(169,132,76,0.15) 40%,
+        rgba(169,132,76,0) 70%
+    );
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* TOOLTIP */
+.flag_9::after {
+    content: attr(data-title);
+
+    position: absolute;
+    left: 50%;
+    bottom: 100%; /* NAD elementem */
+    transform: translate(-50%, -8px);
+
+    padding: 6px 10px;
+
+    background: rgba(10, 20, 15, 0.9);
+    border: 1px solid #a9844c;
+    border-radius: 8px;
+
+    color: #e8d9a8;
+    font-size: 12px;
+    font-family: Georgia, serif;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* pokazanie tooltipa */
+.flag_9:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -14px);
+}
+
+
+/* ===================================
+   FLAG AS IMAGE - dla flag funkcyjnych np
+=================================== */
+
+.flag_image_function {
+    width: 90px;   /* <- tu regulujesz rozmiar */
+    height: auto;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+
+/* ===================================
+   FLAG AS IMAGE - TABS
+=================================== */
+
+.flag_image {
+    width: 160px;   /* dopasuj */
+    height: auto;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.flag:hover .flag_image {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgba(212,180,105,0.6));
+}
+
+/* ===================================
+   FLAG AS IMAGE -IFRAME
+=================================== */
+
+.flag_image_portal {
+    width: 400px;   /* dopasuj */
+    height: auto;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.flag:hover .flag_image_portal {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgba(212,180,105,0.6));
+}
+
+
+/* ===================================
+   DROP
+=================================== */
+
+.coords_panel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.7);
+    color: #e8d9a8;
+
+    padding: 8px 12px;
+    border: 1px solid rgba(184,167,106,0.5);
+    border-radius: 8px;
+
+    font-family: monospace;
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+/* wszystkie inne sekcje ukryte domyślnie */
+.section {
+    min-height: 100vh;
+    width: 100%;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+}
+
+/* aktywna sekcja */
+.section.active {
+    opacity: 1;
+    pointer-events: all;
+    display: block;
+}
+
+/* ===================================
+   MAP CONTAINER
+=================================== */
+
+.map_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.map_stage {
+    position: relative;
+
+    width: 1672px;
+    height: 941px;
+
+    transform-origin: center center;
+}
+
+
+/* ===================================
+   TABLET (<= 1024px)
+   - skaluje mapę zamiast rozjeżdżania
+=================================== */
+@media (max-width: 1024px) {
+
+
+  .coords_panel {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .flag_image {
+    width: 130px;
+  }
+
+  .flag_image_portal {
+    width: 320px;
+  }
+
+  .flag_image_function {
+    width: 75px;
+  }
+}
+
+
+/* ===================================
+   TELEFON (<= 600px)
+   - mocne skalowanie + UX mobile
+=================================== */
+@media (max-width: 600px) {
+
+  /* blokada scrolla mapy (ważne) */
+  body {
+    overflow: hidden;
+  }
+
+
+  .coords_panel {
+    display: none; /* debug panel wyłączony na mobile */
+  }
+
+  .flag {
+    cursor: pointer; /* grab na mobile nie działa sensownie */
+  }
+
+  .flag_image {
+    width: 110px;
+  }
+
+  .flag_image_portal {
+    width: 240px;
+  }
+
+  .flag_image_function {
+    width: 65px;
+  }
+
+  /* tooltipy -> hover na mobile nie działa */
+  .flag::after {
+    display: none;
+  }
+
+  /* lepsza klikalność */
+  .flag {
+    transform: translate(-50%, -100%) scale(1.05);
+  }
+}
+
+/* ================================================================================
+   MODAL TABS
+================================================================================ */
+
+.modal.mode-tabs {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+
+    z-index: 9999;
+
+    pointer-events: none;
+}
+
+/*.modal.mode-tabs.active*/ 
+.modal.active.mode-tabs{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+/* ===================================
+   OKNO RPG
+=================================== */
+
+.modal.mode-tabs .modal_content {
+
+    width: 85vw;
+    height: 90vh;
+
+    background:
+        url("images/parchment.png")
+        center center
+        / cover
+        no-repeat;
+
+    border: 8px solid #5d4122;
+
+    box-shadow:
+        0 0 0 2px #a9844c,
+        0 0 0 4px #3b2813,
+        0 15px 40px rgba(0,0,0,0.7);
+
+    color: #2d1b0e;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: scale(0.92);
+    opacity: 0;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* animacja otwierania */
+
+.modal.mode-tabs.active .modal_content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.modal.mode-tabs .modal_header {
+
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #5d4122,
+            #3b2813
+        );
+
+    border-bottom: 2px solid #a9844c;
+
+    flex-shrink: 0;
+}
+
+.modal.mode-tabs .modal_title {
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+
+    font-size: 24px;
+
+    color: #d4b469;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ===================================
+   ZŁOTE OBRAMOWANIE WEWNĘTRZNE
+=================================== */
+
+.modal.mode-tabs .modal_content::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(212,180,105,0.7);
+
+    border-radius: 4px;
+
+    pointer-events: none;
+}
+
+/* ===================================
+   CLOSE BUTTON
+=================================== */
+
+.modal.mode-tabs .modal_close {
+
+    margin-left: auto;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    border: 1px solid #c9a55f;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #72512a,
+            #4b3318
+        );
+
+    color: #f0dfb3;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.2s;
+}
+
+.modal.mode-tabs .modal_close:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 12px rgba(255,220,140,0.6);
+}
+
+/* ===================================
+   MODAL FRAME
+=================================== */
+
+.modal.mode-tabs #modalFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: opacity 0.2s ease;
+}
+
+/* ===================================
+   TABS
+=================================== */
+
+.modal.mode-tabs .modal_tabs {
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 0 12px;
+
+    background: #353535;
+
+    border-bottom: 1px solid #5a5a5a;
+
+    flex-shrink: 0;
+}
+
+.modal.mode-tabs .tab {
+
+    height: 34px;
+
+    min-width: 120px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    transition: all 0.2s ease;
+}
+
+.modal.mode-tabs .tab.active {
+
+    background: #d4b469;
+
+    color: #2d1b0e;
+
+    font-weight: 700;
+
+    border-radius: 4px 4px 0 0;
+}
+
+.modal.mode-tabs .tab.placeholder {
+
+    background: #4d4d4d;
+
+    opacity: 0.4;
+
+    cursor: default;
+}
+
+/* ===================================
+   BODY
+=================================== */
+
+.modal.mode-tabs .modal_body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal.mode-tabs .modal_fallback {
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    text-align: center;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+
+    font-size: 18px;
+
+    color: #3b2813;
+
+    background: rgba(245, 230, 200, 0.75);
+
+    backdrop-filter: blur(2px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.modal.mode-tabs .modal_fallback.active {
+    opacity: 1;
+}
+
+
+/* ===================================
+   TABLET (<= 1024px)
+=================================== */
+@media (max-width: 1024px) {
+
+  .modal.mode-tabs .modal_content {
+    width: 95vw;
+    height: 92vh;
+
+    border-width: 6px;
+
+    transform: scale(1);
+  }
+
+  .modal.mode-tabs .modal_header {
+    height: 56px;
+    padding: 0 14px;
+  }
+
+  .modal.mode-tabs .modal_title {
+    font-size: 20px;
+  }
+
+  .modal.mode-tabs .modal_tabs {
+    height: 46px;
+    gap: 4px;
+    padding: 0 10px;
+  }
+
+  .modal.mode-tabs .tab {
+    min-width: 100px;
+    font-size: 14px;
+    height: 32px;
+  }
+
+  .modal.mode-tabs .modal_close {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .modal.mode-tabs .modal_fallback {
+    font-size: 16px;
+    padding: 30px;
+  }
+}
+
+
+/* ===================================
+   TELEFON (<= 600px)
+=================================== */
+@media (max-width: 600px) {
+
+  .modal.mode-tabs .modal_content {
+    width: 100vw;
+    height: 100vh;
+
+    border-width: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transform: scale(1);
+  }
+
+  .modal.mode-tabs .modal_header {
+    height: 52px;
+    padding: 0 12px;
+  }
+
+  .modal.mode-tabs .modal_title {
+    font-size: 18px;
+  }
+
+  .modal.mode-tabs .modal_tabs {
+    height: 44px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    gap: 6px;
+    padding: 0 8px;
+  }
+
+  .modal.mode-tabs .tab {
+    min-width: 90px;
+    font-size: 13px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .modal.mode-tabs .modal_close {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .modal.mode-tabs .modal_body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal.mode-tabs .modal_fallback {
+    font-size: 15px;
+    padding: 20px;
+  }
+}
+
+
+/* ================================================================================
+   MODAL IFRAME
+================================================================================ */
+
+.modal.mode-iframe {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.15s ease, visibility 0.15s ease; /*przyspieszanie otwierania modala*/
+
+    z-index: 9999;
+
+    pointer-events: none;
+}
+
+/*.modal.mode-iframe.active*/ 
+.modal.active.mode-iframe{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ===================================
+   BODY
+=================================== */
+
+.modal.mode-iframe .modal_body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal.mode-iframe .modal_fallback {
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    text-align: center;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+
+    font-size: 18px;
+
+    color: #3b2813;
+
+    background: rgba(245, 230, 200, 0.75);
+
+    backdrop-filter: blur(2px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.modal.mode-iframe .modal_fallback.active {
+    opacity: 1;
+}
+
+
+/* ===================================
+   OKNO  -  ZWIEKSZANIE OKNA MODALA
+=================================== */
+
+.modal.mode-iframe .modal_content {
+
+    width: 85vw;
+    height: 90vh;
+
+    background:
+        url("images/parchment.png")
+        center center
+        / cover
+        no-repeat;
+
+    border: 8px solid #5d4122;
+
+    box-shadow:
+        0 0 0 2px #a9844c,
+        0 0 0 4px #3b2813,
+        0 15px 40px rgba(0,0,0,0.7);
+
+    color: #2d1b0e;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: scale(0.92);
+    opacity: 0;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* animacja otwierania */
+
+.modal.mode-iframe.active .modal_content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.modal.mode-iframe .modal_header {
+
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #5d4122,
+            #3b2813
+        );
+
+    border-bottom: 2px solid #a9844c;
+
+    flex-shrink: 0;
+}
+
+.modal.mode-iframe .modal_title {
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+
+    font-size: 24px;
+
+    color: #d4b469;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ===================================
+   ZŁOTE OBRAMOWANIE WEWNĘTRZNE
+=================================== */
+
+.modal.mode-iframe .modal_content::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(212,180,105,0.7);
+
+    border-radius: 4px;
+
+    pointer-events: none;
+}
+
+/* ===================================
+   CLOSE BUTTON
+=================================== */
+
+.modal.mode-iframe .modal_close {
+
+    margin-left: auto;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    border: 1px solid #c9a55f;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #72512a,
+            #4b3318
+        );
+
+    color: #f0dfb3;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.2s;
+}
+
+.modal.mode-iframe .modal_close:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 12px rgba(255,220,140,0.6);
+}
+
+/* ===================================
+   MODAL FRAME
+=================================== */
+
+.modal.mode-iframe #modalFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: opacity 0.2s ease;
+}
+
+/* ===================================
+   TABLET (<= 1024px)
+=================================== */
+@media (max-width: 1024px) {
+
+  .modal.mode-iframe .modal_content {
+    width: 95vw;
+    height: 92vh;
+
+    border-width: 6px;
+
+    transform: scale(1);
+  }
+
+  .modal.mode-iframe .modal_header {
+    height: 56px;
+    padding: 0 14px;
+  }
+
+  .modal.mode-iframe .modal_title {
+    font-size: 20px;
+  }
+
+  .modal.mode-iframe .modal_close {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .modal.mode-iframe .modal_fallback {
+    font-size: 16px;
+    padding: 30px;
+  }
+}
+
+
+/* ===================================
+   TELEFON (<= 600px)
+=================================== */
+@media (max-width: 600px) {
+
+  .modal.mode-iframe .modal_content {
+    width: 100vw;
+    height: 100vh;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transform: scale(1);
+  }
+
+  .modal.mode-iframe .modal_header {
+    height: 52px;
+    padding: 0 12px;
+  }
+
+  .modal.mode-iframe .modal_title {
+    font-size: 18px;
+  }
+
+  .modal.mode-iframe .modal_close {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .modal.mode-iframe .modal_body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal.mode-iframe #modalFrame {
+    height: 100%;
+  }
+
+  .modal.mode-iframe .modal_fallback {
+    font-size: 15px;
+    padding: 20px;
+  }
+}

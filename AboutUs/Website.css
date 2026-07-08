@@ -1,0 +1,2265 @@
+/* --- Body i podstawowe --- */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+    color: #222;
+
+     user-select: none;          /* blokuje zaznaczanie tekstu */
+    -webkit-user-select: none;  /* Chrome / Safari */
+    -ms-user-select: none;      /* stare Edge */
+
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #ecaad0;;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d954a0, #d34d99);
+    border-radius: 20px;
+    border: 1px solid #d954a0;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #d34c98, #d34c98); 
+}
+
+/* --- Header --- */
+header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+/* Logo w headerze */
+header.site-header .logo img {
+    height: 50px; /* stała wysokość logo */
+    width: auto; /* szerokość dopasowana proporcjonalnie */
+    display: block; /* usuwa ewentualne spacje wokół obrazka */
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    
+}
+
+
+
+/* Link jako inline-block dla zachowania wymiarów */
+header.site-header .logo {
+    display: inline-block;
+}
+
+/* Responsywność dla małych ekranów */
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    header.site-header .logo img {
+        height: 45px; /* lekko mniejsze logo niż na desktopie */
+    }
+
+    .header-inner {
+        flex-direction: row; /* nadal w jednej linii, jeśli się mieści */
+        align-items: center;
+        padding: 5px 15px; /* trochę mniejszy padding niż na desktopie */
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    header.site-header .logo img {
+        height: 40px; /* jeszcze mniejsze logo */
+    }
+
+    .header-inner {
+        flex-direction: column; /* układ w kolumnie */
+        align-items: flex-start;
+        padding: 5px 10px; /* mniejszy padding */
+    }
+}
+
+
+
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222;
+    text-decoration: none;
+}
+
+/* --------  Webindex - strona tytułowa  ----------*/
+
+.section {
+    margin-bottom: 50px;
+}
+
+/* --- Tablet --- */
+@media (max-width: 768px) {
+    .section {
+        margin-bottom: 40px; /* trochę mniejszy odstęp niż na desktopie */
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .section {
+        margin-bottom: 30px; /* jeszcze mniejszy odstęp na telefonach */
+    }
+}
+
+
+/* --- Hero / Baner główny sekcjqaa 1 --- */
+.sectionone {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #d954a0; /* tło od lewej do prawej */
+    padding: 30px 20px; /* 20px od góry i 20px od dołu */
+}
+
+.sectionone-inner {
+    max-width: 1200px; /* wewnętrzna strefa ograniczona normalnie 1100 */
+    margin: 0 auto; /* centrowanie w poziomie */
+    padding: 0 20px; /* opcjonalny odstęp od boków */
+}
+
+.sectionone-bg {
+    width: 100%; /* obraz wypełnia hero-inner */
+    height: auto; /* wysokość naturalna */
+    border-radius: 12px; /* zaokrąglone rogi */
+    display: block;
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    .sectionone {
+        padding: 25px 15px; /* trochę mniej niż na desktopie */
+    }
+
+    .sectionone-inner {
+        padding: 0 15px; /* zmniejszony padding wewnętrzny */
+    }
+
+    .sectionone-bg {
+        border-radius: 10px; /* lekko mniejsze zaokrąglenie rogów */
+        width: 100%;
+        height: auto; /* obraz dopasowany do szerokości */
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .sectionone {
+        padding: 20px 10px; /* jeszcze mniejsze paddingi na telefonie */
+    }
+
+    .sectionone-inner {
+        padding: 0 10px; /* dopasowanie do wąskiego ekranu */
+    }
+
+    .sectionone-bg {
+        border-radius: 8px; /* mniejsze zaokrąglenie rogów */
+        width: 100%;
+        height: auto; /* obraz skalowany proporcjonalnie */
+    }
+}
+
+
+
+
+/* --- Sekcja 2: Tekst pod hero --- */
+
+.sectiontwo {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #d954a0; /* tło od lewej do prawej */  
+    padding: 20px 40px; /* 20px od góry i 20px od dołu */
+}
+.sectiontwo-inner {
+    max-width: 1100px; /* wewnętrzna strefa ograniczona normalnie 1100 */
+    margin: 0 auto; /* centrowanie w poziomie */
+    padding: 0 20px; /* opcjonalny odstęp od boków */
+}
+
+    .sectiontwo .welcome-text {
+        color: #fff !important;
+        font-size: 44px !important;
+        font-family: 'Sacramento', cursive !important;
+        user-select: none;
+    }
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    .sectiontwo {
+        padding: 20px 25px; /* mniejszy padding boczny niż na desktopie */
+    }
+
+    .sectiontwo-inner {
+        padding: 0 15px; /* dopasowanie wewnętrznego paddingu */
+    }
+
+    .sectiontwo .welcome-text {
+        font-size: 36px !important; /* zmniejszony rozmiar tekstu na tablet */
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .sectiontwo {
+        padding: 15px 10px; /* minimalny padding na telefonie */
+    }
+
+    .sectiontwo-inner {
+        padding: 0 10px; /* wewnętrzny padding dopasowany do wąskiego ekranu */
+    }
+
+    .sectiontwo .welcome-text {
+        font-size: 28px !important; /* jeszcze mniejszy tekst dla telefonu */
+    }
+}
+
+
+/* --- Sekcja 3: tło i marginesy --- */
+
+.sectionthree {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #d954a0; /* tło od lewej do prawej */ 
+    padding: 20px 40px; /* 20px góra/dół, 40px lewo/prawo */
+}
+
+.sectionthree-inner {
+    max-width: 1100px; /* szerokość wewnętrzna */
+    margin: 0 auto; /* centrowanie */
+    padding: 0 20px; /* dodatkowy padding od boków */
+}
+
+    .sectionthree .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+    }
+
+    .sectionthree .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        padding: 20px;
+        min-height: 150px; /* np. 250px w pionie */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* wyrównanie treści od góry */
+    }
+
+    /* Sterowanie rozmiarem obrazka loga przez CSS*/
+    .sectionthree .card-logo {
+        display: block;
+        margin: 0 auto 12px;
+        width: 40px; /* nowa szerokość */
+        height: 40px; /* nowa wysokość */
+        object-fit: contain; /* zachowuje proporcje obrazka */
+    }
+
+    .sectionthree .card h3 {
+        margin: 12px 0;
+        color: #222; /* ciemny kolor nagłówka */
+    }
+
+    .sectionthree .card p {
+        margin: 0;
+        color: #444; /* ciemniejszy kolor tekstu */
+    }
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    .sectionthree {
+        padding: 20px 20px; /* mniejsze paddingi boczne niż na desktopie */
+    }
+
+    .sectionthree-inner {
+        padding: 0 15px; /* wewnętrzny padding dopasowany do tabletu */
+    }
+
+    .sectionthree .grid {
+        gap: 16px; /* mniejszy odstęp między kartami */
+        grid-template-columns: repeat(2, 1fr); /* dokładnie 2 kolumny */
+    }
+
+    .sectionthree .card {
+        padding: 15px; /* zmniejszony padding w kartach */
+        min-height: 130px; /* trochę mniejsze karty */
+    }
+
+    .sectionthree .card-logo {
+        width: 35px;
+        height: 35px; /* nieco mniejsze loga */
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .sectionthree {
+        padding: 15px 10px; /* minimalny padding na telefonach */
+    }
+
+    .sectionthree-inner {
+        padding: 0 10px; /* dopasowanie do wąskiego ekranu */
+    }
+
+    .sectionthree .grid {
+        gap: 12px; /* minimalny odstęp między kartami */
+        grid-template-columns: 1fr; /* jedna kolumna na telefonie */
+    }
+
+    .sectionthree .card {
+        padding: 12px; /* mniejsze paddingi w kartach */
+        min-height: auto; /* automatyczna wysokość */
+    }
+
+    .sectionthree .card-logo {
+        width: 30px;
+        height: 30px; /* mniejsze loga dla telefonu */
+    }
+}
+
+
+/* --- Sekcja 4: tło i marginesy --- */
+.sectionfour {
+    position: relative;
+    background-color: #fff;
+    padding: 40px 40px;
+    color: #222; /* tekst w czarnym kolorze */
+}
+
+.sectionfour-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* responsywność */
+}
+
+/* Lewa kolumna 2/3 */
+.sectionfour .left-column {
+    flex: 2 1 60%; /* 2/3 szerokości */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.sectionfour .about-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 44px;
+    color: #d954a0;
+    margin-bottom: 50px; /* odstęp 100px pod tytułem */
+    user-select: none;
+}
+
+
+.sectionfour .about-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+    text-align-last: left;
+    user-select: none;
+}
+
+/* Przycisk */
+.sectionfour .about-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d954a0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+    .sectionfour .about-button:hover {
+        background-color: #c24493;
+    }
+
+/* Prawa kolumna 1/3 */
+.sectionfour .right-column {
+    flex: 1 1 35%; /* 1/3 szerokości */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionfour .about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    .sectionfour {
+        padding: 30px 20px; /* mniejsze paddingi niż na desktopie */
+    }
+
+    .sectionfour-inner {
+        flex-direction: column; /* kolumny ustawione w pionie na tablecie */
+        gap: 20px; /* odstęp między kolumnami */
+    }
+
+    .sectionfour .left-column {
+        flex: 1 1 100%; /* pełna szerokość na tabletach */
+        gap: 15px; /* mniejszy odstęp między elementami */
+    }
+
+    .sectionfour .about-title {
+        font-size: 36px; /* zmniejszony tytuł */
+        margin-bottom: 30px; /* mniejszy odstęp pod tytułem */
+    }
+
+    .sectionfour .about-text {
+        font-size: 16px; /* lekko mniejszy tekst */
+    }
+
+    .sectionfour .about-button {
+        font-size: 15px; /* lekko mniejszy przycisk */
+        padding: 10px 20px;
+    }
+
+    .sectionfour .right-column {
+        flex: 1 1 100%; /* pełna szerokość dla obrazka */
+        margin-top: 15px;
+    }
+
+    .sectionfour .about-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .sectionfour {
+        padding: 20px 10px; /* minimalny padding na telefonie */
+    }
+
+    .sectionfour-inner {
+        flex-direction: column; /* kolumny w pionie */
+        gap: 15px; /* mniejszy odstęp między kolumnami */
+    }
+
+    .sectionfour .left-column {
+        flex: 1 1 100%; /* pełna szerokość */
+        gap: 10px; /* mniejszy odstęp między elementami */
+    }
+
+    .sectionfour .about-title {
+        font-size: 28px; /* jeszcze mniejszy tytuł */
+        margin-bottom: 20px; /* mniejszy odstęp pod tytułem */
+    }
+
+    .sectionfour .about-text {
+        font-size: 14px; /* mniejszy tekst dla telefonu */
+    }
+
+    .sectionfour .about-button {
+        font-size: 14px;
+        padding: 8px 16px; /* mniejszy przycisk */
+    }
+
+    .sectionfour .right-column {
+        flex: 1 1 100%; /* pełna szerokość */
+        margin-top: 10px;
+    }
+
+    .sectionfour .about-image {
+        width: 100%;
+        height: auto;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    }
+}
+
+
+
+/* --- Sekcja 5: tło i marginesy --- */
+.sectionfive {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #ecaad0;
+    padding: 20px 40px;
+}
+
+.sectionfive-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Nagłówek sekcji */
+.sectionfive-header {
+    margin-bottom: 40px;
+}
+
+.sectionfive-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 44px;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.sectionfive-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    user-select: none;
+}
+
+/* Siatka 4 pól */
+.sectionfive-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.sectionfive-card {
+    background-color: #fff;
+    color: #222;
+    border-radius: 12px;
+    height: 400px; /* wysokość białeo pola */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* wyśrodkowanie poziome */
+    padding: 14px; /* odstęp od krawędzi */
+    box-sizing: border-box;
+    text-align: center; /* tekst wyśrodkowany */
+    overflow: hidden; /* <-- dodane, aby obrazki były przycięte do radius */
+}
+
+.sectionfive-image {
+    width: calc(100% - 20px); /* odstęp 10px z każdej strony */
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-radius: 12px; /* można zostawić, ale efekt daje też overflow: hidden */
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.sectionfive-card-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.sectionfive-card-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    user-select: none;
+}
+
+/* Przycisk pod siatką */
+.sectionfive-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d954a0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+    .sectionfive-button:hover {
+        background-color: #c24493;
+    }
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    .sectionfive {
+        padding: 20px 20px; /* mniejsze paddingi boczne */
+    }
+
+    .sectionfive-inner {
+        padding: 0 15px; /* wewnętrzny padding dopasowany do tabletu */
+    }
+
+    .sectionfive-title {
+        font-size: 36px; /* mniejszy nagłówek */
+    }
+
+    .sectionfive-subtitle {
+        font-size: 16px; /* mniejszy podtytuł */
+        margin-bottom: 30px;
+    }
+
+    .sectionfive-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolumny na tablet */
+        gap: 16px; /* mniejszy odstęp między kartami */
+        margin-bottom: 30px;
+    }
+
+    .sectionfive-card {
+        height: auto; /* automatyczna wysokość kart */
+        padding: 12px;
+    }
+
+    .sectionfive-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+        border-radius: 12px;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    }
+
+    .sectionfive-card-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .sectionfive-card-text {
+        font-size: 13px;
+    }
+
+    .sectionfive-button {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .sectionfive {
+        padding: 15px 10px;
+    }
+
+    .sectionfive-inner {
+        padding: 0 10px;
+    }
+
+    .sectionfive-title {
+        font-size: 28px;
+    }
+
+    .sectionfive-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .sectionfive-grid {
+        grid-template-columns: 1fr; /* jedna kolumna */
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .sectionfive-card {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .sectionfive-image {
+        width: 100%; /* dopasowanie do szerokości karty */
+        max-width: 100%; /* nie wychodzi poza kartę */
+        max-height: 290px; /* ograniczenie wysokości, aby nie zachodziło na tekst */
+        object-fit: cover; /* zachowuje proporcje, całe zdjęcie widać */
+        box-sizing: border-box;
+        overflow: hidden; /* dodaj, aby obrazki były przycięte */
+        margin-bottom: 12px;
+        border-radius: 12px;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+        
+    }
+
+    .sectionfive-card-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .sectionfive-card-text {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .sectionfive-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/*-------------------What We Do ------------------*/
+/* ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* --- Sekcja Autor --- */
+.WhatWeDoSectionAutor {
+    position: relative;
+    background-color: #d954a0;
+    padding: 30px;
+    color: #222;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: clip;
+}
+
+
+.WhatWeDoSectionAutor-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px; /* odstęp między autorami */
+    overflow-x: clip;
+}
+
+.Author {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* zmiana z flex-start na center */
+    text-align: center; /* wyśrodkowanie tekstu w środku */
+}
+
+.WhatWeDoSectionAutor-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 44px;
+    margin: 0;
+    color: #fff; /* biały kolor */
+    user-select: none;
+}
+
+.WhatWeDoSectionAutor-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #fff; /* biały kolor */
+    margin: 0;
+    white-space: pre-line;
+    user-select: none;
+}
+
+
+/* ===== TABLET – WhatWeDoSectionAutor ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+    .WhatWeDoSectionAutor {
+        padding: 30px; /* zachowujemy desktopowy padding */
+        overflow-x: hidden; /* zapobiega poziomemu scrollowi */
+    }
+
+    .WhatWeDoSectionAutor-inner {
+        gap: 30px; /* zachowujemy desktopowy odstęp */
+    }
+
+    .Author {
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .WhatWeDoSectionAutor-title {
+        font-size: 44px; /* taki jak na desktop */
+    }
+
+    .WhatWeDoSectionAutor-text {
+        font-size: 16px; /* taki jak na desktop */
+    }
+}
+
+/* ===== MOBILE – WhatWeDoSectionAutor ===== */
+@media (max-width: 480px) {
+    .WhatWeDoSectionAutor {
+        padding: 20px 12px; /* mniejszy padding dla telefonu */
+        overflow-x: hidden; /* zapobiega poziomemu scrollowi */
+    }
+
+    .WhatWeDoSectionAutor-inner {
+        gap: 20px; /* mniejszy odstęp między autorami */
+    }
+
+    .Author {
+        gap: 16px;
+        padding: 0 5px; /* delikatne odsunięcie od krawędzi */
+        align-items: flex-start; /* lepsza czytelność */
+        text-align: left;
+    }
+
+    .WhatWeDoSectionAutor-title {
+        font-size: 30px; /* mniejszy tytuł */
+    }
+
+    .WhatWeDoSectionAutor-text {
+        font-size: 14px; /* mniejszy tekst */
+        line-height: 1.5;
+        text-align: left;
+    }
+}
+
+
+/* ========================================================= */
+/* --- Sekcja artykułowa (LayoutType 4) tekst z lewej obrazek z prawej--- */
+
+.WhatWeDoSection4060Four {
+    position: relative;
+    background-color: #d954a0;
+    color: #222;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.WhatWeDoSection4060Four-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    user-select: none;
+}
+
+.WhatWeDoSection4060Four-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: left;
+    color: white;
+}
+
+/* Kontener na obraz i tekst */
+.WhatWeDoSection4060Four-content {
+    font-size: 17px;
+    line-height: 1.6;
+    color: white;
+    text-align: justify;
+}
+
+/* Obrazek po prawej stronie — cały widoczny, tekst go opływa */
+.WhatWeDoSection4060Four-image {
+    float: right;
+    width: 55%; /* zajmuje ok. 1/3 szerokości tekstu */
+    height: auto; /* dopasuj wysokość proporcjonalnie */
+    margin: 0 0 15px 25px; /* odstęp od tekstu (z lewej i na dole) */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    object-fit: contain; /* upewnia się, że cały obrazek jest widoczny */
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+
+
+/* Tekst */
+.WhatWeDoSection4060Four-text {
+    display: inline;
+}
+
+/* ===== TABLET – WhatWeDoSection4060Four ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+    .WhatWeDoSection4060Four {
+        padding: 40px 20px; /* taki jak desktop */
+        overflow-x: hidden;
+    }
+
+    .WhatWeDoSection4060Four-inner {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .WhatWeDoSection4060Four-title {
+        font-size: 30px; /* taki jak desktop */
+        text-align: left;
+    }
+
+    .WhatWeDoSection4060Four-content {
+        font-size: 17px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .WhatWeDoSection4060Four-image {
+        float: right;
+        width: 50%; /* nieco mniejszy, aby lepiej mieścił się na tablecie */
+        margin: 0 0 15px 20px;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    }
+
+    .WhatWeDoSection4060Four-text {
+        display: inline;
+    }
+}
+
+/* ===== MOBILE – WhatWeDoSection4060Four ===== */
+@media (max-width: 480px) {
+    .WhatWeDoSection4060Four {
+        padding: 20px 12px;
+    }
+
+    .WhatWeDoSection4060Four-inner {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .WhatWeDoSection4060Four-title {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .WhatWeDoSection4060Four-content {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .WhatWeDoSection4060Four-image {
+        float: none;
+        width: 100%; /* obrazek pełnej szerokości */
+        margin: 0 0 15px 0;
+        display: block;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    }
+
+    .WhatWeDoSection4060Four-text {
+        display: block;
+    }
+}
+
+
+
+/* ========================================================= */
+/* --- Sekcja artykułowa (LayoutType 5) — obrazek z LEWEJ, tekst z prawej --- */
+.WhatWeDoSection4060Five {
+    position: relative;
+    background-color: #d954a0;
+    color: #222;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.WhatWeDoSection4060Five-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    user-select: none;
+}
+
+.WhatWeDoSection4060Five-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: left;
+    color: white;
+}
+
+/* Kontener tekstu */
+.WhatWeDoSection4060Five-content {
+    font-size: 17px;
+    line-height: 1.6;
+    color: white;
+    text-align: justify;
+}
+
+/* Obrazek po LEWEJ stronie — cały widoczny, tekst go opływa z prawej */
+.WhatWeDoSection4060Five-image {
+    float: left;
+    width: 55%;
+    height: auto;
+    margin: 0 25px 15px 0; /* odstęp od tekstu (z prawej i na dole) */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    object-fit: contain;
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* Tekst */
+.WhatWeDoSection4060Five-text {
+    display: inline;
+}
+
+/* ===== TABLET – WhatWeDoSection4060Five ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+    .WhatWeDoSection4060Five {
+        padding: 40px 20px; /* taki jak desktop */
+        overflow-x: hidden;
+    }
+
+    .WhatWeDoSection4060Five-inner {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .WhatWeDoSection4060Five-title {
+        font-size: 30px; /* taki jak desktop */
+        text-align: left;
+    }
+
+    .WhatWeDoSection4060Five-content {
+        font-size: 17px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .WhatWeDoSection4060Five-image {
+        float: left;
+        width: 50%; /* nieco mniejszy, żeby lepiej mieścił się na tablecie */
+        margin: 0 20px 15px 0;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    }
+
+    .WhatWeDoSection4060Five-text {
+        display: inline;
+    }
+}
+
+/* ===== MOBILE – WhatWeDoSection4060Five ===== */
+@media (max-width: 480px) {
+    .WhatWeDoSection4060Five {
+        padding: 20px 12px;
+    }
+
+    .WhatWeDoSection4060Five-inner {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .WhatWeDoSection4060Five-title {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .WhatWeDoSection4060Five-content {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .WhatWeDoSection4060Five-image {
+        float: none;
+        width: 100%; /* obrazek pełnej szerokości */
+        margin: 0 0 15px 0;
+        display: block;
+        pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+    }
+
+    .WhatWeDoSection4060Five-text {
+        display: block;
+    }
+}
+
+
+/*------------------------ What We Do -----------------------------*/
+
+
+
+/* --- sekcjqa 1 --- */
+.WhatWeDoSectionOne {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #d954a0; /* tło od lewej do prawej */
+    padding: 30px 20px; /* 20px od góry i 20px od dołu */
+}
+
+.WhatWeDoSectionOne-inner {
+    max-width: 1200px; /* wewnętrzna strefa ograniczona normalnie 1100 */
+    margin: 0 auto; /* centrowanie w poziomie */
+    padding: 0 20px; /* opcjonalny odstęp od boków */
+}
+
+.WhatWeDoSectionOne-bg {
+    width: 100%; /* obraz wypełnia hero-inner */
+    height: auto; /* wysokość naturalna */
+    border-radius: 12px; /* zaokrąglone rogi */
+    display: block;
+
+     pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+    .WhatWeDoSectionOne {
+        padding: 20px 15px; /* mniejszy padding dla tabletu */
+    }
+
+    .WhatWeDoSectionOne-bg {
+        width: 95%; /* lekko zmniejszony obraz dla tabletu */
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+    .WhatWeDoSectionOne {
+        padding: 15px 10px; /* jeszcze mniejszy padding dla telefonu */
+    }
+
+    .WhatWeDoSectionOne-bg {
+        width: 100%; /* obraz dopasowany do szerokości telefonu */
+    }
+}
+
+
+/* ========================================================= */
+/* --- Sekcja 100% szerokości (LayoutType 3) --- */
+
+.WhatWeDoSectionAll {
+    background-color: #d954a0;
+    padding: 40px;
+    width: 100%;
+    color: #ffffff;
+}
+
+.WhatWeDoSectionAll-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* wyśrodkowanie */
+    text-align: center;       /* wyśrodkowanie tekstu */
+    gap: 25px;
+}
+
+.WhatWeDoSectionAll-inner img {
+    width: 100%;       /* opcjonalnie ogranicza szerokość obrazka */
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.WhatWeDoSectionAll-inner h3 {
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0;
+    user-select: none;
+}
+
+.WhatWeDoSectionAll-inner p {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0;
+    text-align: center;
+    user-select: none;
+}
+
+/* --- Tablet --- */
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .WhatWeDoSectionAll {
+        padding: 30px 20px; /* mniejszy padding niż desktop */
+    }
+
+    .WhatWeDoSectionAll-inner {
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .WhatWeDoSectionAll-inner img {
+        width: 95%; /* lekko mniejszy obraz */
+    }
+
+    .WhatWeDoSectionAll-inner h3 {
+        font-size: 40px; /* mniejszy tytuł */
+        line-height: 1.2;
+    }
+
+    .WhatWeDoSectionAll-inner p {
+        font-size: 16px; /* mniejszy tekst */
+        line-height: 1.5;
+        max-width: 90%;
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+
+    .WhatWeDoSectionAll {
+        padding: 20px 12px; /* minimalny padding */
+    }
+
+    .WhatWeDoSectionAll-inner {
+        gap: 16px;
+        max-width: 100%;
+    }
+
+    .WhatWeDoSectionAll-inner img {
+        width: 100%; /* pełna szerokość telefonu */
+        border-radius: 10px;
+    }
+
+    .WhatWeDoSectionAll-inner h3 {
+        font-size: 28px; /* wyraźnie mniejszy tytuł */
+        line-height: 1.2;
+    }
+
+    .WhatWeDoSectionAll-inner p {
+        font-size: 14px; /* czytelny na telefonie */
+        line-height: 1.5;
+        max-width: 100%;
+    }
+}
+
+
+/*
+    Sekcja ponizej jest poświęcona stronie WebContact - Kontakt
+*/
+
+/* --- sekcjqa 1 --- */
+.ContactSectionOne {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #d954a0; /* tło od lewej do prawej */
+    padding: 30px 20px; /* 20px od góry i 20px od dołu */
+}
+
+.ContactSectionOne-inner {
+    max-width: 1200px; /* wewnętrzna strefa ograniczona normalnie 1100 */
+    margin: 0 auto; /* centrowanie w poziomie */
+    padding: 0 20px; /* opcjonalny odstęp od boków */
+}
+
+.ContactSectionOne-bg {
+    width: 100%; /* obraz wypełnia hero-inner */
+    height: auto; /* wysokość naturalna */
+    border-radius: 12px; /* zaokrąglone rogi */
+    display: block;
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* ===== TABLET – ContactSectionOne ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+    .ContactSectionOne {
+        padding: 25px 15px;
+    }
+
+    .ContactSectionOne-inner {
+        padding: 0 15px;
+    }
+}
+
+/* ===== MOBILE – ContactSectionOne ===== */
+@media (max-width: 480px) {
+    .ContactSectionOne {
+        padding: 20px 10px;
+    }
+
+    .ContactSectionOne-inner {
+        padding: 0 10px;
+    }
+}
+
+
+/* --- Sekcja 2 --- */
+.ContactSectionTwo {
+    position: relative;
+    background-color: #ecaad0;
+    color: #222;
+    padding: 40px 40px; /* 40px od góry i 40px od dołu */
+    overflow-x: hidden;
+}
+
+.ContactSectionTwo-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+}
+
+/* Lewa kolumna: tytuł + tekst */
+.ContactSectionTwo-left {
+    flex: 1 1 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ContactSectionTwo-title {
+    font-family: 'Lato', sans-serif;
+    color: slateblue;
+    pointer-events: none;
+}
+
+.ContactSectionTwo-text {
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+    text-align-last: left;
+    color: white;
+
+    pointer-events: none;
+}
+
+/* Prawa kolumna: obrazek + tło */
+.ContactSectionTwo-right {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /*  <- wyrównanie do góry */
+    /* justify-content: space-between;  ✅ rozsuwa tytuł/tekst i przycisk */
+    align-items: center; /* poziome wyśrodkowanie */
+    gap: 10px;
+    position: relative; /* konieczne, żeby przycisk "wiedział", względem czego się pozycjonuje */
+}
+
+.ContactSectionTwo-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+
+
+}
+
+/* Tło pod obrazkiem */
+.ContactSectionTwo-shadow-box {
+    position: absolute;
+    width: 645px; /* szerokość tła w px */
+    height: 365px; /* wysokość tła w px */
+    background-color: #d954a0; /* Twój kolor HEX */
+    bottom: -25px; /* przesunięcie w dół */
+    right: -25px; /* przesunięcie w prawo */
+    border-radius: 12px; /* takie same jak obrazek */
+    z-index: 1; /* pod obrazkiem */
+}
+
+/* Obrazek na wierzchu */
+.ContactSectionTwo-image {
+    width: 100%; /* wypełnia szerokość kolumny */
+    height: auto;
+    display: block;
+    border-radius: 12px; /* zaokrąglone rogi */
+    position: relative;
+    z-index: 2; /* na wierzchu */
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* Przycisk */
+.ContactSectionTwo-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d954a0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* 🔥 kluczowe */
+    bottom: 40px; /* 🔥 40 px od dołu kolumny */
+    left: 0; /* wyrównanie do lewej */
+    width: 100%; /* pełna szerokość */
+    box-sizing: border-box; /* żeby padding nie rozszerzał szerokości */
+
+  
+}
+
+
+    .ContactSectionTwo-button:hover {
+        background-color: #c24493;
+    }
+
+/* Logo Instagrama na obrazku */
+.ContactSectionTwo-instagram-logo {
+    position: absolute;
+    left: 25px; /* 🔸 odstęp od lewej krawędzi */
+    bottom: 25px; /* 🔸 odstęp od dolnej krawędzi */
+    width: 80px; /* 🔸 możesz dowolnie zmieniać szerokość */
+    height: auto; /* 🔸 wysokość skaluje się automatycznie */
+    border-radius: 12px; /* 🔸 dopasowanie do zaokrągleń obrazu */
+    z-index: 3; /* 🔸 wyżej niż obrazek */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* subtelny cień dla lepszej widoczności */
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+    .ContactSectionTwo-instagram-logo:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+
+/* ===== DESKTOP SMALL (769–1179) ===== */
+@media (min-width: 769px) and (max-width: 1179px) {
+    .ContactSectionTwo-shadow-box {
+        display: none;
+    }
+}
+
+
+
+/* ===== TABLET – ContactSectionTwo ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .ContactSectionTwo {
+        padding: 30px 20px;
+    }
+
+    .ContactSectionTwo-inner {
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+
+    .ContactSectionTwo-left {
+        flex: 1 1 55%;
+    }
+
+    .ContactSectionTwo-right {
+        flex: 1 1 45%;
+    }
+
+    .ContactSectionTwo-image {
+        width: 85%;
+        max-width: 420px;
+    }
+
+    .ContactSectionTwo-shadow-box {
+        display: none;
+    }
+
+    .ContactSectionTwo-button {
+        position: static; /* ✅ najważniejsze */
+        margin-top: 20px;
+        width: 100%;
+        margin-top: auto;  
+    }
+}
+
+
+
+/* ===== MOBILE – ContactSectionTwo ===== */
+@media (max-width: 480px) {
+
+    .ContactSectionTwo {
+        padding: 20px 10px;
+    }
+
+    .ContactSectionTwo-inner {
+        flex-direction: column;
+    }
+
+    .ContactSectionTwo-left,
+    .ContactSectionTwo-right {
+        flex: 1 1 100%;
+    }
+
+    .ContactSectionTwo-button {
+        position: static;
+        margin-top: 20px;
+        margin-top: auto;  
+    }
+
+    .ContactSectionTwo-shadow-box {
+        display: none;
+    }
+}
+
+
+
+/* --- Sekcja 3 --- */
+
+.ContactSectionThree {
+    position: relative;
+    background-color: #ecaad0;
+    color: #222;
+    padding: 40px 40px;
+}
+
+.ContactSectionThree-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+}
+
+/* Lewa kolumna: tytuł + tekst */
+.ContactSectionThree-left {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.ContactSectionThree-title {
+    font-family: 'Lato', sans-serif;
+    color: slateblue;
+    pointer-events: none;
+}
+
+.ContactSectionThree-text {
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+    text-align-last: left;
+    color: white;
+
+    pointer-events: none;
+}
+
+/* Prawa kolumna: obrazek + tło */
+.ContactSectionThree-right {
+    flex: 1 1 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ContactSectionThree-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Tło pod obrazkiem */
+.ContactSectionThree-shadow-box {
+    position: absolute;
+    width: 645px;
+    height: 365px;
+    background-color: #d954a0;
+    bottom: -25px;
+    right: -25px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+/* Obrazek na wierzchu */
+.ContactSectionThree-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* Przycisk */
+.ContactSectionThree-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d954a0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    
+}
+
+    .ContactSectionThree-button:hover {
+        background-color: #c24493;
+    }
+
+/* Logo Youtube na obrazku */
+.ContactSectionThree-youtube-logo {
+    position: absolute;
+    left: 25px; /* 🔸 teraz od lewego górnego rogu */
+    top: 25px;
+    width: 100px;
+    height: auto;
+    border-radius: 18px;
+    z-index: 3;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+    .ContactSectionThree-youtube-logo:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+/* ===== DESKTOP SMALL (769–1179) ===== */
+@media (min-width: 769px) and (max-width: 1179px) {
+    .ContactSectionThree-shadow-box {
+        display: none;
+    }
+}
+
+/* ===== TABLET – ContactSectionThree ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .ContactSectionThree {
+        padding: 30px 20px;
+    }
+
+    .ContactSectionThree-inner {
+        flex-wrap: nowrap;
+    }
+
+    .ContactSectionThree-left {
+        flex: 1 1 45%;
+    }
+
+    .ContactSectionThree-right {
+        flex: 1 1 55%;
+    }
+
+    .ContactSectionThree-image {
+        width: 85%;
+        max-width: 420px;
+    }
+
+    .ContactSectionThree-shadow-box {
+        display: none;
+    }
+
+    .ContactSectionThree-button {
+        position: static; /* ✅ najważniejsze */
+        margin-top: 20px;
+        width: 100%;
+        margin-top: auto; 
+    }
+}
+
+/* ===== MOBILE – ContactSectionThree ===== */
+@media (max-width: 480px) {
+
+    .ContactSectionThree {
+        padding: 20px 10px;
+    }
+
+    .ContactSectionThree-inner {
+        flex-direction: column;
+    }
+
+    .ContactSectionThree-left,
+    .ContactSectionThree-right {
+        flex: 1 1 100%;
+    }
+
+    .ContactSectionThree-button {
+        position: static;
+        margin-top: 20px;
+        margin-top: auto; 
+    }
+
+    .ContactSectionThree-shadow-box {
+        display: none;
+    }
+}
+
+
+/* --- Sekcja 5 --- */
+.ContactSectionFive {
+    position: relative;
+    background-color: #fff;
+    padding: 30px 30px;
+    color: #222; /* tekst w czarnym kolorze */
+    text-align: center; /* wszystko wyśrodkowane */
+}
+
+.ContactSectionFive-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* elementy układane pionowo */
+    align-items: center; /* wyśrodkowanie poziome */
+    gap: 20px; /* odstęp między napisami */
+}
+
+/* Górny napis */
+.ContactSectionFive-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 44px;
+    color: slateblue;
+    margin: 0;
+}
+
+/* Dolny napis */
+.ContactSectionFive-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #000000; /* czarny */
+    margin: 0;
+}
+
+/* ===== TABLET – ContactSectionFive ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .ContactSectionFive {
+        padding: 25px 20px;
+    }
+
+    .ContactSectionFive-inner {
+        max-width: 100%;
+        gap: 18px;
+    }
+
+    .ContactSectionFive-title {
+        font-size: 38px;
+    }
+
+    .ContactSectionFive-subtitle {
+        font-size: 15px;
+    }
+}
+
+/* ===== MOBILE – ContactSectionFive ===== */
+@media (max-width: 480px) {
+
+    .ContactSectionFive {
+        padding: 20px 15px;
+    }
+
+    .ContactSectionFive-inner {
+        flex-direction: column; /* jednokolumnowy układ */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .ContactSectionFive-title {
+        font-size: 28px;
+    }
+
+    .ContactSectionFive-subtitle {
+        font-size: 14px;
+    }
+}
+
+/* --- Sekcja 4 --- */
+.ContactSectionFour {
+    position: relative;
+    background-color: #ecaad0;
+    color: #222;
+    padding: 40px 40px; /* 40px od góry i 40px od dołu */
+    overflow-x: hidden;
+}
+
+    .ContactSectionFour,
+    .ContactSectionFour * {
+        box-sizing: border-box;
+    }
+
+
+.ContactSectionFour-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* dla responsywności */
+}
+
+/* Lewa kolumna: tytuł + tekst */
+.ContactSectionFour-left {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* dodaj ograniczenie */
+    box-sizing: border-box; /* żeby padding nie rozciągał */
+}
+
+.ContactSectionFour-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+    
+}
+.ContactSectionFour-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Prawa kolumna: obrazek + tło */
+.ContactSectionFour-right {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* formularz od góry */
+    align-items: stretch; /* formularz wypełnia szerokość kolumny */
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.ContactSectionFour-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 645px;
+    box-sizing: border-box;
+    /* margin-top: auto; automatyczne wypełnienie od góry */
+    margin-bottom: 50px; /* automatyczne wypełnienie od dołu */
+    display: block; /* żeby działały marginesy auto */
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+
+/* Tło pod obrazkiem */
+.ContactSectionFour-shadow-box {
+    position: absolute;
+    width: 565px; /* szerokość tła w px */
+    height: 320px; /* wysokość tła w px */
+    background-color: #d954a0; /* Twój kolor HEX */
+    bottom: -25px; /* przesunięcie w dół */
+    right: -25px; /* przesunięcie w prawo */
+    border-radius: 12px; /* takie same jak obrazek */
+    z-index: 1; /* pod obrazkiem */
+}
+
+/* Obrazek na wierzchu */
+.ContactSectionFour-image {
+    width: 100%; /* wypełnia szerokość kolumny */
+    height: auto;
+    display: block;
+    border-radius: 12px; /* zaokrąglone rogi */
+    position: relative;
+    z-index: 2; /* na wierzchu */
+}
+
+/* Przycisk */
+.ContactSectionFour-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d954a0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* 🔥 kluczowe */
+    bottom: 40px; /* 🔥 40 px od dołu kolumny */
+    left: 0; /* wyrównanie do lewej */
+    width: 100%; /* pełna szerokość */
+    box-sizing: border-box; /* żeby padding nie rozszerzał szerokości */
+}
+
+
+    .ContactSectionFour-button:hover {
+        background-color: #c24493;
+    }
+
+/* Logo Instagrama na obrazku */
+.ContactSectionFour-mail-logo {
+    position: absolute;
+    left: 25px; /* 🔸 odstęp od lewej krawędzi */
+    bottom: 25px; /* 🔸 odstęp od dolnej krawędzi */
+    width: 80px; /* 🔸 możesz dowolnie zmieniać szerokość */
+    height: auto; /* 🔸 wysokość skaluje się automatycznie */
+    border-radius: 12px; /* 🔸 dopasowanie do zaokrągleń obrazu */
+    z-index: 3; /* 🔸 wyżej niż obrazek */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* subtelny cień dla lepszej widoczności */
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+    .ContactSectionFour-mail-logo:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+/* ===== DESKTOP SMALL (769–1179) ===== */
+@media (min-width: 769px) and (max-width: 1179px) {
+    .ContactSectionFour-shadow-box {
+        display: none;
+    }
+}
+
+/* ===== TABLET – ContactSectionFour ===== */
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .ContactSectionFour {
+        padding: 16px; /* zamiast 10px 10px */
+    }
+
+    .ContactSectionFour-inner {
+        flex-direction: column;
+        gap: 16px; /* zamiast 0 */
+    }
+
+    .ContactSectionFour-left,
+    .ContactSectionFour-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    /* Obrazek na środku */
+    .ContactSectionFour-image-wrapper {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .ContactSectionFour-shadow-box {
+        display: none;
+    }
+
+    #contactForm {
+        max-width: 100%; /* 🔥 ZAMIAST 85% */
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* ===== MOBILE – ContactSectionFour ===== */
+@media (max-width: 480px) {
+
+    .ContactSectionFour {
+        padding: 10px 10px;
+    }
+
+    .ContactSectionFour-inner {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .ContactSectionFour-left,
+    .ContactSectionFour-right {
+        width: 100%;
+    }
+
+    .ContactSectionFour-image-wrapper {
+        max-width: 100%;
+    }
+
+    .ContactSectionFour-shadow-box {
+        display: none;
+    }
+
+    #contactForm {
+        max-width: 85%;
+        padding: 14px;
+    }
+}
+
+.ContactSectionFour_container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    font-family: 'Lato', sans-serif;
+    color: #222;
+}
+
+/* nagłówek */
+.ContactSectionFour_container h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* checkbox area */
+.ContactSectionFour_checkbox-area {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.ContactSectionFour_checkbox-area label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* checkbox */
+#acceptRules {
+    transform: scale(1.1);
+    accent-color: #d954a0;
+}
+
+/* tekst “agree” */
+.ContactSectionFour_agree {
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* link Conditions */
+.ContactSectionFour_conditions-link {
+    color: slateblue;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ContactSectionFour_conditions-link:hover {
+    color: #d954a0;
+}
+
+/* przyciski w rzędzie */
+.buttons-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* wspólny styl buttonów */
+.ContactSectionFour_show,
+.ContactSectionFour_copy {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* show email */
+.ContactSectionFour_show {
+    background-color: #d954a0;
+    color: white;
+}
+
+.ContactSectionFour_show:hover:enabled {
+    background-color: #c24493;
+}
+
+/* copy email */
+.ContactSectionFour_copy {
+    background-color: slateblue;
+    color: white;
+}
+
+.ContactSectionFour_copy:hover:enabled {
+    background-color: #5a4db2;
+}
+
+/* disabled state */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ContactSectionFour_copy-msg {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    border: 1px solid #1b7f2a;
+    background-color: #fff;
+    color: #1b7f2a;
+
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    display: none; 
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: default;
+    transition: all 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+/* email */
+.ContactSectionFour_email {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+    display: inline-block;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .ContactSectionFour_container {
+        max-width: 100%;
+        gap: 16px;
+    }
+
+    .ContactSectionFour_container h2 {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+    .ContactSectionFour_checkbox-area {
+        font-size: 14px;
+    }
+
+    .ContactSectionFour_checkbox-area label {
+        gap: 8px;
+    }
+
+    /* przyciski */
+    .buttons-row {
+        gap: 10px;
+    }
+
+    .ContactSectionFour_show,
+    .ContactSectionFour_copy,
+    .ContactSectionFour_copy-msg {
+        font-size: 14px;
+        padding: 10px 16px;
+        border-radius: 10px;
+    }
+
+    .ContactSectionFour_email {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .ContactSectionFour_container {
+        max-width: 100%;
+        gap: 14px;
+    }
+
+    .ContactSectionFour_container h2 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* checkbox układ pionowy */
+    .ContactSectionFour_checkbox-area {
+        font-size: 13px;
+    }
+
+    .ContactSectionFour_checkbox-area label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    #acceptRules {
+        transform: scale(1);
+    }
+
+    /* przyciski: pełna szerokość */
+    .buttons-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ContactSectionFour_show,
+    .ContactSectionFour_copy {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    .ContactSectionFour_copy-msg {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 16px;
+        text-align: center;
+    }
+
+    .ContactSectionFour_email {
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .ContactSectionFour_conditions-link {
+        font-size: 13px;
+    }
+}

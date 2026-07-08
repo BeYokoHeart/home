@@ -1,0 +1,298 @@
+body.oracle-body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f12;
+    color: #eaeaea;
+}
+
+@media (max-width: 1024px) {
+  iframe[src*="buymeacoffee"],
+  div[class*="bmc"],
+  #bmc-wbtn {
+    display: none !important;
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #0b0b10;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3a3a48, #1f1f28);
+    border-radius: 20px;
+    border: 1px solid #2b2b35;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #55556a, #2b2b35);
+}
+
+/* =========================
+   GLOBAL LAYOUT
+========================= */
+
+.oracle-container,
+.oracle-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+/* =========================
+   🎛️ CONTROL SIZE (TU ZMIENIASZ PX)
+========================= */
+
+:root {
+    --card-width: 60px;
+    --card-height: 90px;
+}
+
+/* =========================
+   BUTTONS (UNIFIED)
+========================= */
+
+.oracle-btn,
+button {
+    margin-top: 0px;
+    padding: 10px 15px;
+    border: 1px solid #555;
+    background: #2b2b35;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.oracle-btn:hover,
+button:hover {
+    background: #3a3a48;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =========================
+   🃏 CARD SYSTEM (COMMON STYLE)
+========================= */
+
+#cardImage,
+.oracle-table img,
+.card-back img,
+.card-front img {
+    width: var(--card-width);
+    height: var(--card-height);
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.card-preview {
+    position: fixed;
+    width: calc(var(--card-width) * 3);
+    height: calc(var(--card-height) * 3);
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    overflow: hidden;
+    display: none;
+    transform: translate(-50%, -100%);
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-preview:not(.hidden) {
+    display: block;
+}
+
+/* =========================
+   🧍 1-CARD SLOT LAYOUT
+========================= */
+
+.oracle-card-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(var(--card-height) + 20px);
+}
+
+/* =========================
+   📊 3-CARD TABLE LAYOUT
+========================= */
+
+.oracle-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+     table-layout: fixed;
+}
+
+.oracle-table th {
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #333;
+    opacity: 0.9;
+}
+
+.oracle-slot {
+    padding: 15px;
+    vertical-align: top;
+    overflow: hidden;
+    height: calc(var(--card-height) + 60px);
+}
+
+.result-box {
+    margin-bottom: 60px;
+}
+
+/* =========================
+   ANSWER BLOCKADE
+========================= */
+
+.result-box {
+    user-select: none;
+    padding: 10px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* regular */
+    font-size: 14px;
+
+    text-align: justify; /* wyrównanie lewo-prawo */
+
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+}
+
+.card-title {
+    user-select: none;
+    padding: 10px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; /* bold */
+    font-size: 18px;
+}
+
+.card-number {
+    user-select: none;
+    padding: 5px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* regular */
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+/*
+.result-box,
+.card-title,
+.card-number {
+    user-select: none;
+    padding: 10px 10px;
+}
+*/
+/* =========================
+   TOPBAR / BUTTON AREA
+========================= */
+
+.oracle-topbar,
+.oracle-buttons {
+    position: sticky;
+    top: 0;
+    padding: 15px 0;
+    background: #0f0f12;
+    z-index: 10;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+
+/* =========================
+   TEXT AREA (1 CARD)
+========================= */
+
+.card-meta {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.card-number {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.card-description {
+    margin: 15px 0;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.card-categories p {
+    margin: 4px 0;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+
+/* ===================================
+   TABLET (<= 1024px)
+=================================== */
+@media (max-width: 1024px) {
+
+  .oracle-table {
+    width: 100%;
+  }
+
+  .oracle-slot {
+    padding: 12px;
+  }
+
+  .oracle-table th {
+    font-size: 14px;
+  }
+}
+
+
+/* ===================================
+   TELEFON (<= 600px)
+   → TABLE → STACK LAYOUT
+=================================== */
+@media (max-width: 600px) {
+
+   .oracle-table {
+    width: 100%;
+  }
+
+  .oracle-slot {
+    padding: 12px;
+  }
+
+  .oracle-table th {
+    font-size: 14px;
+  }
+  
+}

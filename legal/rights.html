@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rights</title>
+
+    <link rel="stylesheet" href="legalstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="body_rights">
+
+    <main class="rights_container">
+
+        <!-- TYTUŁ -->
+        <h1>© 2018 - <span id="year"></span> BeYokoHeart. All rights reserved.</h1>
+
+        <h2>All content, graphics, texts, images, designs, and other materials available on this website are protected by copyright and other applicable intellectual property laws. Any reproduction, distribution, modification, publication, or commercial use of any part of this website without prior written permission of the copyright holder is prohibited.</h2>
+
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

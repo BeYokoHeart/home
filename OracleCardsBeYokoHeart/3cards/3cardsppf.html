@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oracle 3 Cards</title>
+    <link rel="stylesheet" href="3cardsppf.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="oracle-body">
+
+<div class="oracle-wrapper">
+
+    <h2>Oracle 3 Cards Spread </h2>
+    <h3>(What do these cards want to tell me about my current situation?)</h3>
+
+    <!-- PRZYCISKI POD TYTUŁEM -->
+    <div class="oracle-buttons">
+        <button id="drawBtn" onclick="drawCard()">Draw a card</button>
+        <button id="showBtn" onclick="showResult()" style="display:none;">Show result</button>
+        <button onclick="resetGame()">Reset</button>
+    </div>
+
+    <table class="oracle-table">
+        <tr>
+            <th>Past</th>
+            <th>Present</th>
+            <th>Future</th>
+        </tr>
+
+        <tr>
+            <td class="oracle-slot">
+                <img id="past-img" class="card-back" src="../../images/oracle/back.jpg">              
+                <div id="past-result"></div>
+            </td>
+
+            <td class="oracle-slot">
+                <img id="present-img" class="card-back" src="../../images/oracle/back.jpg">                
+                <div id="present-result"></div>
+            </td>
+
+            <td class="oracle-slot">
+                <img id="future-img" class="card-back" src="../../images/oracle/back.jpg">
+                <div id="future-result"></div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div id="cardPreview" class="card-preview hidden">
+    <img id="cardPreviewImg" src="" alt="Card preview">
+</div>
+
+<script src="../oraclebase.js"></script>
+<script src="3cardsppf.js"></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="BeYokoHeart" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+   
+
+</body>
+</html>

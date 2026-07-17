@@ -856,6 +856,328 @@ header.site-header .logo {
 
 
 /* ========================================================= */
+/* Sekcja Yoko PDF/Image  */
+
+.WhatWeDoSectionAutorYoko {
+    background: #d954a0;
+    padding: 40px 30px;
+    width: 100%;
+}
+
+.WhatWeDoSectionAutorYoko-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.WhatWeDoSectionAutorYoko-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.WhatWeDoSectionAutorYoko-text {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    pointer-events: none; 
+}
+
+.WhatWeDoSectionAutorYoko-button {
+    background: #ecaad0;
+    color: white;
+    border: none;
+    outline: none;
+
+    padding: 12px 28px;
+    border-radius: 20px;
+
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: .3s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.WhatWeDoSectionAutorYoko-button:hover {
+    background: #e39ac5;
+}
+
+.WhatWeDoSectionAutorYoko-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+.WhatWeDoSectionAutorYoko-pdf {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease;
+}
+
+.WhatWeDoSectionAutorYoko-pdf img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-top:25px;
+    border-radius:8px;
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* ========================================================= */
+/* ===== TABLET – WhatWeDoSectionAutorYoko ===== */
+
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .WhatWeDoSectionAutorYoko {
+        padding: 30px;
+        overflow-x: hidden;
+    }
+
+    .WhatWeDoSectionAutorYoko-inner {
+        max-width: 1100px;
+    }
+
+    .WhatWeDoSectionAutorYoko-header {
+        gap: 20px;
+        align-items: center;
+    }
+
+    .WhatWeDoSectionAutorYoko-text {
+        font-size: 20px;
+    }
+
+    .WhatWeDoSectionAutorYoko-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .WhatWeDoSectionAutorYoko-pdf img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+}
+
+
+/* ========================================================= */
+/* ===== MOBILE – WhatWeDoSectionAutorYoko ===== */
+
+@media (max-width: 480px) {
+
+    .WhatWeDoSectionAutorYoko {
+        padding: 20px 12px;
+        overflow-x: hidden;
+    }
+
+    .WhatWeDoSectionAutorYoko-inner {
+        width: 100%;
+    }
+
+    .WhatWeDoSectionAutorYoko-header {
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+
+    }
+
+    .WhatWeDoSectionAutorYoko-text {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+
+    .WhatWeDoSectionAutorYoko-button {
+
+        padding: 10px 22px;
+        font-size: 14px;
+        align-self: flex-start;
+
+    }
+
+
+    .WhatWeDoSectionAutorYoko-pdf img {
+
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 6px;
+
+    }
+
+}
+
+/* ========================================================= */
+/* Sekcja Heart PDF/Image  */
+
+.WhatWeDoSectionAutorHeart {
+    background: #d954a0;
+    padding: 40px 30px;
+    width: 100%;
+}
+
+.WhatWeDoSectionAutorHeart-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.WhatWeDoSectionAutorHeart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.WhatWeDoSectionAutorHeart-text {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    pointer-events: none; 
+}
+
+.WhatWeDoSectionAutorHeart-button {
+    background: #ecaad0;
+    color: white;
+    border: none;
+    outline: none;
+
+    padding: 12px 28px;
+    border-radius: 20px;
+
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: .3s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.WhatWeDoSectionAutorHeart-button:hover {
+    background: #e39ac5;
+}
+
+.WhatWeDoSectionAutorHeart-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+.WhatWeDoSectionAutorHeart-pdf {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease;
+}
+
+.WhatWeDoSectionAutorHeart-pdf img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-top:25px;
+    border-radius:8px;
+
+    pointer-events: none; 
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* ========================================================= */
+/* ===== TABLET – WhatWeDoSectionAutorHeart ===== */
+
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .WhatWeDoSectionAutorHeart {
+        padding: 30px;
+        overflow-x: hidden;
+    }
+
+    .WhatWeDoSectionAutorHeart-inner {
+        max-width: 1100px;
+    }
+
+    .WhatWeDoSectionAutorHeart-header {
+        gap: 20px;
+        align-items: center;
+    }
+
+    .WhatWeDoSectionAutorHeart-text {
+        font-size: 20px;
+    }
+
+    .WhatWeDoSectionAutorHeart-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .WhatWeDoSectionAutorHeart-pdf img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+}
+
+
+/* ========================================================= */
+/* ===== MOBILE – WhatWeDoSectionAutorHeart ===== */
+
+@media (max-width: 480px) {
+
+    .WhatWeDoSectionAutorHeart {
+        padding: 20px 12px;
+        overflow-x: hidden;
+    }
+
+    .WhatWeDoSectionAutorHeart-inner {
+        width: 100%;
+    }
+
+    .WhatWeDoSectionAutorHeart-header {
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+
+    }
+
+    .WhatWeDoSectionAutorHeart-text {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+
+    .WhatWeDoSectionAutorHeart-button {
+
+        padding: 10px 22px;
+        font-size: 14px;
+        align-self: flex-start;
+
+    }
+
+
+    .WhatWeDoSectionAutorHeart-pdf img {
+
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 6px;
+
+    }
+
+}
+
+
+
+/* ========================================================= */
 /* --- Sekcja artykułowa (LayoutType 4) tekst z lewej obrazek z prawej--- */
 
 .WhatWeDoSection4060Four {

@@ -15,7 +15,7 @@ button.addEventListener("click", function () {
 
         if (!pdfLoaded) {
 
-            image.src = "../images/pdf/Yoko.jpg";
+            image.src = "../images/pdf/Yoko18072026.jpg";
 
             image.onload = function () {
                 container.style.maxHeight = image.offsetHeight + 50 + "px";

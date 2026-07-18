@@ -16,7 +16,7 @@ button.addEventListener("click", function () {
 
         if (!pdfLoaded) {
 
-            image.src = "../images/pdf/Heart.jpg";
+            image.src = "../images/pdf/Heart18072026.jpg";
 
             image.onload = function () {
                 container.style.maxHeight = image.offsetHeight + 50 + "px";

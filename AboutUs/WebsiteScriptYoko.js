@@ -9,7 +9,7 @@ button.addEventListener("click", function () {
     if (container.style.maxHeight) {
 
         container.style.maxHeight = null;
-        button.textContent = "Expand";
+        button.textContent = "Open";
 
     } else {
 
@@ -29,7 +29,7 @@ button.addEventListener("click", function () {
 
         }
 
-        button.textContent = "Collapse";
+        button.textContent = "Close";
     }
 
 });

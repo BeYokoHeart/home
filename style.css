@@ -73,18 +73,63 @@ body {
 }
 
 
-/* OBRAZ */
-.homecity_image {
+
+
+/* WARSTWA OBRAZU */
+
+.map_image_wrapper {
+
     position: absolute;
+
     inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    
+
+    overflow: hidden;
+
     z-index: 1;
 
 }
 
+
+/* OBRAZ */
+
+.homecity_image {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+       regulacja przycięcia
+
+       50% = równo góra/dół
+       60% = więcej ucina górę
+       70% = jeszcze więcej góry
+       40% = więcej ucina dół
+    */
+
+    object-position: center 40%;
+
+
+    display: block;
+
+}
+
+/* ===================================
+   TELEFON LANDSCAPE
+=================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .homecity_image {
+
+        object-position: center 35%;
+
+    }
+
+}
 
 /* FLAGA */
 .flag {
@@ -583,91 +628,126 @@ body {
 /* ===================================
    MAP CONTAINER
 =================================== */
+/* CENTROWANIE MAPY */
 
 .map_container {
+
     position: absolute;
+
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 
+
+/* GŁÓWNA PLANSZA */
+
 .map_stage {
+
     position: relative;
 
     width: 1672px;
     height: 941px;
 
     transform-origin: center center;
+
 }
 
 
 /* ===================================
    TABLET (<= 1024px)
-   - skaluje mapę zamiast rozjeżdżania
 =================================== */
+
 @media (max-width: 1024px) {
 
 
-  .coords_panel {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
+    .coords_panel {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 
-  .flag_image {
-    width: 130px;
-  }
 
-  .flag_image_portal {
-    width: 320px;
-  }
+    /* mniejsze elementy graficzne flag */
 
-  .flag_image_function {
-    width: 75px;
-  }
+    .flag_image {
+        width: 130px;
+    }
+
+
+    .flag_image_portal {
+        width: 320px;
+    }
+
+
+    .flag_image_function {
+        width: 75px;
+    }
+
+
+    /*
+       trochę większy obszar kliknięcia
+       dla dotyku
+    */
+
+    .flag {
+        cursor: pointer;
+    }
+
 }
-
 
 /* ===================================
    TELEFON (<= 600px)
-   - mocne skalowanie + UX mobile
 =================================== */
+
 @media (max-width: 600px) {
 
-  /* blokada scrolla mapy (ważne) */
-  body {
-    overflow: hidden;
-  }
+
+    body {
+        overflow: hidden;
+    }
 
 
-  .coords_panel {
-    display: none; /* debug panel wyłączony na mobile */
-  }
+    .coords_panel {
+        display: none;
+    }
 
-  .flag {
-    cursor: pointer; /* grab na mobile nie działa sensownie */
-  }
 
-  .flag_image {
-    width: 110px;
-  }
+    /*
+       mobile nie używa hover
+    */
 
-  .flag_image_portal {
-    width: 240px;
-  }
+    .flag::after {
+        display: none;
+    }
 
-  .flag_image_function {
-    width: 65px;
-  }
 
-  /* tooltipy -> hover na mobile nie działa */
-  .flag::after {
-    display: none;
-  }
+    /*
+       większy obszar dotyku
+    */
 
-  /* lepsza klikalność */
-  .flag {
-    transform: translate(-50%, -100%) scale(1.05);
-  }
+    .flag {
+        cursor: pointer;
+
+        transform:
+            translate(-50%, -100%)
+            scale(1.05);
+    }
+
+
+    .flag_image {
+        width: 110px;
+    }
+
+
+    .flag_image_portal {
+        width: 240px;
+    }
+
+
+    .flag_image_function {
+        width: 65px;
+    }
+
 }
 
 /* ================================================================================

@@ -104,20 +104,55 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===================================
 
     function scaleScene() {
-
+    
         const stage = document.getElementById("mapStage");
-
-        const scaleX = window.innerWidth / 1672;
-        const scaleY = window.innerHeight / 941;
-
-        const scale = Math.min(scaleX, scaleY);
-
-        stage.style.transform = `scale(${scale})`;
+    
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+    
+    
+        const scaleX = width / 1672;
+        const scaleY = height / 941;
+    
+    
+        let scale;
+    
+    
+        // pionowo (telefon/tablet)
+        if (height > width) {
+    
+            scale = scaleX;
+    
+        }
+    
+        // poziomo
+        else {
+    
+            // jeśli szeroki ekran (PC)
+            if (width > 1200) {
+    
+                scale = Math.max(scaleX, scaleY);
+    
+            } 
+            
+            // tablet poziomo
+            else {
+    
+                scale = scaleX;
+    
+            }
+    
+        }
+    
+    
+        stage.style.transform =
+            `translate(-50%, -50%) scale(${scale})`;
     }
 
-    window.addEventListener("resize", scaleScene);
 
-    scaleScene();
+window.addEventListener("resize", scaleScene);
+
+scaleScene();
 
     // ===================================
     // OTWIERANIE MODALA

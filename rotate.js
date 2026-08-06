@@ -15,8 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return window.innerWidth <= 1024;
     }
 
+    //function isPortrait() {
+    //    return window.matchMedia("(orientation: portrait)").matches;
+    //}
     function isPortrait() {
-        return window.matchMedia("(orientation: portrait)").matches;
+        return window.innerHeight > window.innerWidth;
     }
 
     function shouldShow() {
@@ -47,7 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
     check();
 
     window.addEventListener("resize", check);
-    window.addEventListener("orientationchange", check);
+   // window.addEventListener("orientationchange", check);
+    window.addEventListener("orientationchange", () => {
+        setTimeout(() => {
+            if (!isPortrait()) {
+                dismissed = true;
+                hide();
+            }
+
+            check();
+        }, 300);
+    });
 
     // ======================================
     // PRZYCISK 1: kontynuuj (tymczasowo)
